@@ -1,5 +1,6 @@
 package pages;
 
+import org.example.Cadastro;
 import org.openqa.selenium.By;
 import runner.RunCucumberTest;
 
@@ -42,21 +43,27 @@ public class CadastroPage extends RunCucumberTest {
     }
 
     public CadastroPage preencherOFormulario(String name, String mail, String password) {
-        if (name == null) {
-            getDriver().findElement(nome).clear();
-        } else {
-            fillName(name);
-        }
-        if (mail == null) {
-            getDriver().findElement(email).clear();
-        } else {
-            fillEmail(mail);
-        }
-        if (password == null) {
-            getDriver().findElement(senha).clear();
-        } else {
-            fillPassword(password);
-        }
+
+        Cadastro cadastro = new Cadastro(name,mail,password);
+        fillName(cadastro.getName());
+        fillEmail(cadastro.getEmail());
+        fillPassword(cadastro.getPassword());
+
+//        if (name == null) {
+//            getDriver().findElement(nome).clear();
+//        } else {
+//            fillName(name);
+//        }
+//        if (mail == null) {
+//            getDriver().findElement(email).clear();
+//        } else {
+//            fillEmail(mail);
+//        }
+//        if (password == null) {
+//            getDriver().findElement(senha).clear();
+//        } else {
+//            fillPassword(password);
+//        }
         cadastrar();
         return this;
     }

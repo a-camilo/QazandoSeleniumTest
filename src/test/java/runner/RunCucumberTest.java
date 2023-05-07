@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/feature",
         glue = "steps",
-        tags = ""
+        tags = "@Cadastro"
 )
 public class RunCucumberTest extends RunBase {
 

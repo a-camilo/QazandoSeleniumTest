@@ -7,7 +7,7 @@ import pages.CheckOutViewPage;
 public class CheckOutViewSteps {
 
     @Quando("preencher as informações")
-    public void preencherAsInformações() {
+    public void preencherAsInformações() throws InterruptedException {
         CheckOutViewPage.action().preencherAsInformações(
                 "Petter",
                 "Parker",

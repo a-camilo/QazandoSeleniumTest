@@ -16,7 +16,7 @@ public class HomePage extends Commands {
 
     public HomePage url() {
         getDriver().get(URL);
-        waitElementBeClickable(wait, 30);
+        waitElementBeVisible(wait,30);
         return this;
     }
 

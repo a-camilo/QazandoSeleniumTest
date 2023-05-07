@@ -9,8 +9,8 @@ import static support.Commands.*;
 public class LoginPage extends RunCucumberTest {
     private final By user = By.id("user");
     private final By password = By.id("password");
-    private final By btnLogin = By.cssSelector("#btnLogin");
-    private final By successModal = By.cssSelector("#swal2-html-container");
+    private final By btnLogin = By.id("btnLogin");
+    private final By successModal = By.id("swal2-title");
     private final By invalidPassword = By.xpath("//span[contains(text(),'Senha inválida.')]");
     private final By invalidEmail = By.xpath("//span[contains(text(),'E-mail inválido.')]");
 
@@ -37,23 +37,15 @@ public class LoginPage extends RunCucumberTest {
     public LoginPage inserirMinhasCredenciais(String email, String senha) {
         Cadastro cadastro = new Cadastro(null, email, senha);
 
-        if (email == null) {
-            getDriver().findElement(user).clear();
-        } else {
-            setEmail(cadastro.getEmail());
-        }
-        if (senha == null) {
-            getDriver().findElement(password).clear();
-        } else {
-            setSenha(cadastro.getPassword());
-        }
+        setEmail(cadastro.getEmail());
+        setSenha(cadastro.getPassword());
         Login();
         return this;
     }
 
     public LoginPage mensagem(String msg) {
         switch (msg) {
-            case "Olá, antonio@gmail.com" -> checkMessage(msg, successModal);
+            case "Login realizado" -> checkMessage(msg, successModal);
             case "Senha inválida." -> checkMessage(msg, invalidPassword);
             case "E-mail inválido." -> checkMessage(msg, invalidEmail);
         }

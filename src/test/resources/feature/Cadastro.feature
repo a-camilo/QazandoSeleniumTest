@@ -18,3 +18,4 @@ Funcionalidade: Cadastrar usuários
       | Tony Stark   | tony_stark@gmail.com |        | O campo senha deve ter pelo menos 6 dígitos    | campo senha vazia                     |
       | Tony Stark   | tony_stark@gmail.com | 12345  | O campo senha deve ter pelo menos 6 dígitos    | campo senha deve ter minimo 6 digitos |
       | Peter Parker | p.parkergmail.com    | 123456 | O campo e-mail deve ser prenchido corretamente | campo email inválido                  |
+      |              |                      |        | O campo nome deve ser prenchido                | todos os campos vazios                |
