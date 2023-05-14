@@ -1,9 +1,13 @@
 package pages;
 
 import org.openqa.selenium.By;
-import support.Commands;
+import runner.RunCucumberTest;
 
-public class HomePage extends Commands {
+
+import static support.Commands.clickElement;
+import static support.Commands.waitElementBeVisible;
+
+public class HomePage extends RunCucumberTest {
     private final String URL = "http://automationpratice.com.br/";
     private final By wait = By.xpath("//*[text()='Vaideo & Audio']");
     private final By register = By.xpath("//*[text()=' Cadastro']");
@@ -15,8 +19,9 @@ public class HomePage extends Commands {
     }
 
     public HomePage url() {
+
         getDriver().get(URL);
-        waitElementBeVisible(wait,30);
+        waitElementBeVisible(wait, 30);
         return this;
     }
 

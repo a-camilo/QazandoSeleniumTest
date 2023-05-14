@@ -15,12 +15,12 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/feature",
         glue = "steps",
-        tags = "@Cadastro"
+        tags = ""
 )
 public class RunCucumberTest extends RunBase {
 
     @AfterClass
     public static void stop() {
-        driver.quit();
+        getDriver().quit();
     }
 }

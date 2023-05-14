@@ -1,6 +1,6 @@
 package pages;
 
-import org.example.Cadastro;
+import entity.Cadastro;
 import org.openqa.selenium.By;
 import runner.RunCucumberTest;
 
@@ -35,7 +35,7 @@ public class LoginPage extends RunCucumberTest {
     }
 
     public LoginPage inserirMinhasCredenciais(String email, String senha) {
-        Cadastro cadastro = new Cadastro(null, email, senha);
+        Cadastro cadastro = new Cadastro(email, senha);
 
         setEmail(cadastro.getEmail());
         setSenha(cadastro.getPassword());
@@ -45,9 +45,15 @@ public class LoginPage extends RunCucumberTest {
 
     public LoginPage mensagem(String msg) {
         switch (msg) {
-            case "Login realizado" -> checkMessage(msg, successModal);
-            case "Senha inválida." -> checkMessage(msg, invalidPassword);
-            case "E-mail inválido." -> checkMessage(msg, invalidEmail);
+            case "Login realizado":
+                checkMessage(msg, successModal);
+                break;
+            case "Senha inválida.":
+                checkMessage(msg, invalidPassword);
+                break;
+            case "E-mail inválido.":
+                checkMessage(msg, invalidEmail);
+                break;
         }
         return this;
     }

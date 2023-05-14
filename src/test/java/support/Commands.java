@@ -42,7 +42,7 @@ public class Commands extends RunCucumberTest {
     public static void checkMessage(String expectedMessage, By element) {
         try {
             waitElementBeVisible(element, 30);
-            var actualMessage = getDriver().findElement(element).getText();
+            String actualMessage = getDriver().findElement(element).getText();
             Assert.assertEquals(actualMessage, expectedMessage);
 
         } catch (Exception error) {

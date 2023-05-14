@@ -1,14 +1,15 @@
 package steps;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Scenario;
+import cucumber.api.Scenario;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.After;
 import pages.HomePage;
 import pages.LoginPage;
+import support.ScreenshotUtils;
+
+import static support.ScreenshotUtils.addScreenshotScenario;
 
 public class LoginSteps {
 
@@ -34,12 +35,9 @@ public class LoginSteps {
 
     @After
     public static void takeScreenshot(Scenario scenario) {
-
-        System.out.println("==================");
-        System.out.println("Teste executado: " + scenario.getName());
-        System.out.println("Status: " + scenario.getStatus());
-        System.out.println("Tag: " + scenario.getSourceTagNames());
-        System.out.println("==================");
+        if (scenario.isFailed()){
+            ScreenshotUtils.addScreenshotScenario(scenario);
+        }
     }
 
 }

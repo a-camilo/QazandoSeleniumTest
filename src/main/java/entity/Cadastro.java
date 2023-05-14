@@ -1,4 +1,4 @@
-package org.example;
+package entity;
 
 public class Cadastro {
 
@@ -6,7 +6,14 @@ public class Cadastro {
     private String email;
     private String password;
 
-    public Cadastro(){}
+    public Cadastro() {
+    }
+
+    public Cadastro(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public Cadastro(String name, String email, String password) {
         this.name = name;
         this.email = email;
@@ -17,28 +24,20 @@ public class Cadastro {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public boolean isEmailValid(String email) {
+        return email.matches("^[A-Za-z0-9+_.-]+@(.+)$");
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public boolean isPasswordValid(String password) {
+        return password.matches("[a-zA-Z0-9]");
     }
 
-    @Override
-    public String toString() {
-        return name + email + password;
-    }
 }
