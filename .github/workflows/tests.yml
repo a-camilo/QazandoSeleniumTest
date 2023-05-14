@@ -1,6 +1,6 @@
-name: Run Test
+- name: Run Test QA
 
-on:
+- on:
   pull_request:
     branches: [ master ]
 
