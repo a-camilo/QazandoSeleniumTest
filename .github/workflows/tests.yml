@@ -1,4 +1,4 @@
-name: Smoke Tests - PR
+name: Run Test
 
 on:
   pull_request:
@@ -23,7 +23,7 @@ on:
           uses: browser-actions/setup-chrome@v1
         - run: chrome --version
 
-        - name: inmstalar Chrome driver
+        - name: instalar Chrome driver
           uses: nanasess/setup-chromedriver@v2
         - run: |
             export DISPLAY=:99
