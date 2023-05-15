@@ -1,4 +1,4 @@
-name: Smoke Test
+name: Smoke Test Pipe
 
 on:
     pull_request:
