@@ -1,10 +1,10 @@
 name: Run Test QA
 
 on:
-  pull_request:
+    pull_request:
     branches: [ master ]
 
-  jobs:
+jobs:
     RunTest:
       run-on: ubuntu-latest
 
@@ -32,4 +32,3 @@ on:
 
         - name: Run Test
         - run: mvn test -Dtest=RunCucumberTest -Dbrowser=CHROME_CI
-
