@@ -1,6 +1,5 @@
 package pages;
 
-import entity.Cadastro;
 import org.openqa.selenium.By;
 import runner.RunCucumberTest;
 
@@ -35,10 +34,9 @@ public class LoginPage extends RunCucumberTest {
     }
 
     public LoginPage inserirMinhasCredenciais(String email, String senha) {
-        Cadastro cadastro = new Cadastro(email, senha);
 
-        setEmail(cadastro.getEmail());
-        setSenha(cadastro.getPassword());
+        setEmail(email);
+        setSenha(senha);
         Login();
         return this;
     }

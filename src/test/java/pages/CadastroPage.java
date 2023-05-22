@@ -1,6 +1,5 @@
 package pages;
 
-import entity.Cadastro;
 import org.openqa.selenium.By;
 import runner.RunCucumberTest;
 
@@ -44,10 +43,9 @@ public class CadastroPage extends RunCucumberTest {
 
     public CadastroPage preencherOFormulario(String name, String mail, String password) {
 
-        Cadastro cadastro = new Cadastro(name, mail, password);
-        fillName(cadastro.getName());
-        fillEmail(cadastro.getEmail());
-        fillPassword(cadastro.getPassword());
+        fillName(name);
+        fillEmail(mail);
+        fillPassword(password);
         cadastrar();
         return this;
     }
