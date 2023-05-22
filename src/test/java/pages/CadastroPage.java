@@ -1,6 +1,5 @@
 package pages;
 
-import entity.Cadastro;
 import org.openqa.selenium.By;
 import runner.RunCucumberTest;
 
